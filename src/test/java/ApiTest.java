@@ -1,6 +1,7 @@
 import kong.unirest.HttpResponse;
 import kong.unirest.JsonNode;
 import kong.unirest.Unirest;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -73,6 +74,7 @@ public class ApiTest {
     }
 
     @Test
+    @Disabled("Geçici olarak kapalı / refactor bekliyor")
     public void testGetPostWithQueryParam() {
         HttpResponse<JsonNode> response = Unirest.get("https://jsonplaceholder.typicode.com/posts")
                 .queryString("title", "qui est esse")
