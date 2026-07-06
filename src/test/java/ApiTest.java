@@ -164,5 +164,29 @@ public class ApiTest {
         assertEquals(200, getResponse.getStatus());
     }
 
+    @Test
+    public void NsogrContractEntry() {
+        HttpResponse<JsonNode> response = Unirest.get("https://jsonplaceholder.typicode.com/posts/1")
+                .asJson();
+
+        assertEquals(200, response.getStatus());
+        JsonNode body = response.getBody();
+        System.out.println(body.toString());
+
+        assertEquals(1, body.getObject().getInt("id"));
+    }
+
+    @Test
+    public void NsogrContract() {
+        HttpResponse<JsonNode> response = Unirest.get("https://jsonplaceholder.typicode.com/posts/1")
+                .asJson();
+
+        assertEquals(200, response.getStatus());
+        JsonNode body = response.getBody();
+        System.out.println(body.toString());
+
+        assertEquals(1, body.getObject().getInt("id"));
+    }
+
 
 }
